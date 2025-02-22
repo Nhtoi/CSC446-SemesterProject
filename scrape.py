@@ -1,50 +1,34 @@
 import praw
 import os
 from dotenv import load_dotenv
-import requests
+import pandas as pd
+import csv  # Import csv module for quoting options
 
-load_dotenv()  
+load_dotenv()
+df = pd.DataFrame(columns=["comment_body", "comment_score"])
 
-reddit_client_id = os.getenv("REDDIT_CLIENT_ID")
-reddit_client_secret = os.getenv("REDDIT_CLIENT_SECRET")
-reddit_username = os.getenv("REDDIT_USERNAME")
-reddit_password = os.getenv("REDDIT_PASSWORD")
-
-
-auth = requests.auth.HTTPBasicAuth(reddit_client_id, reddit_client_secret)
-
-
-data = praw.Reddit(
-    client_id=reddit_client_id,
-    client_secret=reddit_client_secret,
-    username=reddit_username,
-    password=reddit_password,
+reddit = praw.Reddit(
+    client_id=os.getenv("REDDIT_CLIENT_ID"),
+    client_secret=os.getenv("REDDIT_CLIENT_SECRET"),
+    username=os.getenv("REDDIT_USERNAME"),
+    password=os.getenv("REDDIT_PASSWORD"),
     user_agent="scrape"
 )
 
+for post in reddit.subreddit("MonsterHunter").top(limit=1):
+    print(f"Title: {post.title}")
+    print(f"Comments: {post.num_comments}\n")
 
-headers = {
-    "User-Agent": "MyAPI/0.1 by Nhtoi",
-}
+    post.comments.replace_more(limit=None)  
+    comments_list = post.comments.list()  
+    if not comments_list:
+        print("No comments found for this post.")
 
-res = requests.post(
-    "https://www.reddit.com/api/v1/access_token",
-    auth=auth,
-    data={
-        "grant_type": "password",
-        "username": reddit_username,
-        "password": reddit_password
-    },
-    headers=headers
-)
+    for comment in comments_list[:5]:  # Limit to 5 comments for testing
+        df = df._append({
+            "comment_body": comment.body.replace("\n", " "),  # Remove newlines
+            "comment_score": comment.score,
+        }, ignore_index=True)
 
-
-TOKEN = res.json().get("access_token")
-if not TOKEN:
-    raise ValueError("Failed to get access token from Reddit API")
-
-headers = {**headers, **{'Authorization': f"bearer {TOKEN}"}}
-
-# print(headers)
-
-
+# Save to CSV while ensuring text remains on one line
+df.to_csv("./Raw_Data/comments.csv", index=False, quoting=csv.QUOTE_MINIMAL)  # Use minimal quoting to keep formatting clean
