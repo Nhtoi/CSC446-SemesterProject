@@ -7,14 +7,11 @@ CHALLENGES:
 
 HOW TO EXTRACT INFORMATION FROM WEBSITES	
 
-Using selenium to extract information from the website, since the website can be chosen by 
-driver = webdriver.Firefox()
-driver.get("http://www.python.org")
-Can add variable “webiste” which stores user input website and can be fed to 
-Website = user input
-driver.get(website)
-Can extract from website elements more information here: 
-https://selenium-python.readthedocs.io/locating-elements.html
+Used Reddit API and praw to scrape posts, and gather comments along with infromation such as upvotes. Cannot track downvotes.
+but upvotes alone should be a decent indication that a comment is a good addition to the thread and not a troll comments, 
+however comments that are found funny could be added to this meaning that our model may think that a comment with a high ammount
+of upvotes is a helpful comment always, could implement some sort of filter to combat this however, I don't think it will be necessary
+extracting comments from inside comments has not been added yet, and im still not quite sure if it is necessary. Unless we need more data
 For our training we need to extract upvotes, comments, anything really that can indicate a good comment and helpful for our summarization.
 
 Could be a google chrome plugin, that can communicate with a python backend
