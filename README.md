@@ -1,9 +1,6 @@
 Course Project Midway Report
-Kevin Rui, Jaskaran Chahal
+Kevin Ruiz, Jaskaran Chahal
 Computer Science Department
-University of North Carolina at Greensboro
-Cary, United States
-k ruiz@uncg.edu Jschahal@uncg.edu
 I. PROJECT DEFINITION
 The goal of this project is to develop and train an AI
 agent for summarizing forum conversations. The first step
