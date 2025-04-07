@@ -2,14 +2,14 @@ Course Project Midway Report
 Kevin Ruiz, Jaskaran Chahal
 Computer Science Department
 
-I. PROJECT DEFINITION
-  The goal of this project is to develop and train an AI
-  agent for summarizing forum conversations. The first step
-  involves extracting, cleaning, and processing discussion data
-  to generate meaningful summaries while maintaining contextual integrity. Automated summarization can help streamline
-  information retrieval and enhance comprehension of online
-  discussions.
-
+  
+    I. PROJECT DEFINITION
+    The goal of this project is to develop and train an AI
+    agent for summarizing forum conversations. The first step
+    involves extracting, cleaning, and processing discussion data
+    to generate meaningful summaries while maintaining contextual integrity. Automated summarization can help streamline
+    information retrieval and enhance comprehension of online
+    discussions.
     A. Problem Statement
       Online discussion forums generate vast amounts of usergenerated content, making it difficult to extract key insights
     efficiently. This issue is especially relevant in technical or
@@ -35,10 +35,8 @@ I. PROJECT DEFINITION
       • Evaluating different summarization techniques (extractive
     vs. abstractive) to determine the most effective approach.
       • Optionally, developing a front-end interface for improved
-    accessibility and usability of generated summaries.
-
-
-  II. RELATED WORK
+    accessibility and usability of generated summaries
+    II. RELATED WORK
     Research in text summarization has explored extractive
     and abstractive techniques. Extractive approaches focus on
     selecting key sentences directly from the text, while abstractive
@@ -84,8 +82,8 @@ I. PROJECT DEFINITION
           their effectiveness.
           • Efficiency Metrics: Measure inference time and computational efficiency for practical deployment considerations.
         V. REFERENCES
- X. Liu and Y. Lapata, ”Query-based Summarization of Discussion
-Threads,” Natural Language Engineering, 2020.
- A. Radev, ”Multi-stage Online Forum Summarization,” ResearchGate,
-2020. https://www.researchgate.net/publication/341298724 Multistage
-Online Forum Summarization#pff
+      X. Liu and Y. Lapata, ”Query-based Summarization of Discussion
+      Threads,” Natural Language Engineering, 2020.
+     A. Radev, ”Multi-stage Online Forum Summarization,” ResearchGate,
+    2020. https://www.researchgate.net/publication/341298724 Multistage
+    Online Forum Summarization#pff
