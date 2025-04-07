@@ -1,2 +1,6 @@
 .env
 Raw_Data
+checkpoints
+Processed_Data
+__pycache__
+Processed_Data/processed_comments.csv
