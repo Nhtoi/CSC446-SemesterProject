@@ -1,8 +1,5 @@
-Course Project Midway Report
-Kevin Ruiz, Jaskaran Chahal
-Computer Science Department
 
-  
+    Kevin Ruiz, Jaskaran Chahal
     I. PROJECT DEFINITION
     The goal of this project is to develop and train an AI
     agent for summarizing forum conversations. The first step
